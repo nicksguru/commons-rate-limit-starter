@@ -1,6 +1,7 @@
 # [Nicks.Guru](https://nicks.guru) Commons Rate Limit Starter
 
-Rate Limit starter. Based on [Bucket4j](https://github.com/bucket4j/bucket4j).
+Rate Limit starter. Based on [Bucket4j](https://github.com/bucket4j/bucket4j) and PostgreSQL. See Liquibase
+migration XML [here](src/main/resources/bucket4j-liquibase-migration.xml).
 
 ## Usage
 

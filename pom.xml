@@ -5,18 +5,14 @@
     <parent>
         <groupId>guru.nicks.commons</groupId>
         <artifactId>parent</artifactId>
-        <version>0.1.0-alpha.25</version><!-- [BVM] -->
+        <version>1.0.0-rc.1</version><!-- [BVM] -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <!-- groupId is redundant (inherited from parent), but required by Maven Central -->
     <groupId>guru.nicks.commons</groupId>
     <artifactId>rate-limit-starter</artifactId>
-    <version>${guru.nicks.commons.version}</version>
-
-    <name>Nicks.Guru Commons Rate Limit Starter</name>
-    <description>Rate limit starter</description>
-    <url>https://nicks.guru</url>
+    <url>https://github.com/nicksguru/commons-rate-limit-starter</url>
 
     <licenses>
         <license>
@@ -25,20 +21,22 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
     <developers>
         <developer>
             <name>Nick S.</name>
             <email>job-offers@nicks.guru</email>
-            <organizationUrl>https://nicks.guru</organizationUrl>
+            <url>https://nicks.guru</url>
         </developer>
     </developers>
-
     <scm>
-        <connection>https://nicks.guru</connection>
-        <developerConnection>https://nicks.guru</developerConnection>
-        <url>https://nicks.guru</url>
+        <connection>scm:git:git://github.com/nicksguru/commons-rate-limit-starter.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/nicksguru/commons-rate-limit-starter.git</developerConnection>
+        <url>https://github.com/nicksguru/commons-rate-limit-starter</url>
     </scm>
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/nicksguru/commons-rate-limit-starter/issues</url>
+    </issueManagement>
 
     <dependencies>
         <dependency>

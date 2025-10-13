@@ -16,7 +16,7 @@
 
     <name>Nicks.Guru Commons Rate Limit Starter</name>
     <description>Starter for limiting (throttling) requests to API components</description>
-    <url>https://github.com/nicksguru/commons-rest-dto</url>
+    <url>https://github.com/nicksguru/commons-rate-limit-starter</url>
 
     <licenses>
         <license>

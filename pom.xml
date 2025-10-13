@@ -12,7 +12,7 @@
     <!-- groupId is redundant (inherited from parent), but required by Maven Central -->
     <groupId>guru.nicks.commons</groupId>
     <artifactId>rate-limit-starter</artifactId>
-    <url>https://github.com/nicksguru/commons-rate-limit-starter</url>
+    <version>${guru.nicks.commons.version}</version>
 
     <name>Nicks.Guru Commons Rate Limit Starter</name>
     <description>Starter for limiting (throttling) requests to API components</description>

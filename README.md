@@ -1,7 +1,7 @@
 # [Nicks.Guru](https://nicks.guru) Commons Rate Limit Starter
 
-Rate Limit starter. Based on [Bucket4j](https://github.com/bucket4j/bucket4j) and PostgreSQL. See Liquibase
-migration XML [here](src/main/resources/bucket4j-liquibase-migration.xml).
+Starter for limiting (throttling) requests to API components. Based on [Bucket4j](https://github.com/bucket4j/bucket4j)
+and PostgreSQL. See Liquibase migration XML [here](src/main/resources/bucket4j-liquibase-migration.xml).
 
 ## Usage
 
@@ -9,6 +9,7 @@ Pick the most recent version from
 [Maven Central](https://central.sonatype.com/namespace/guru.nicks.commons), then use as follows:
 
 ```xml
+
 <dependencyManagement>
     <dependencies>
         <dependency>
@@ -22,10 +23,10 @@ Pick the most recent version from
 </dependencyManagement>
 
 <dependencies>
-    <dependency>
-        <groupId>guru.nicks.commons</groupId>
-        <artifactId>rate-limit-starter</artifactId>
-    </dependency>
+<dependency>
+    <groupId>guru.nicks.commons</groupId>
+    <artifactId>rate-limit-starter</artifactId>
+</dependency>
 </dependencies>
 ```
 

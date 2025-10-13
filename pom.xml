@@ -14,6 +14,10 @@
     <artifactId>rate-limit-starter</artifactId>
     <url>https://github.com/nicksguru/commons-rate-limit-starter</url>
 
+    <name>Nicks.Guru Commons Rate Limit Starter</name>
+    <description>Starter for limiting (throttling) requests to API components</description>
+    <url>https://github.com/nicksguru/commons-rest-dto</url>
+
     <licenses>
         <license>
             <name>GNU Lesser General Public License, Version 3</name>

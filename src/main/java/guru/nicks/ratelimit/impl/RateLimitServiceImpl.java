@@ -9,9 +9,7 @@ import io.github.bucket4j.distributed.BucketProxy;
 import io.github.bucket4j.distributed.proxy.ProxyManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.http.HttpHeaders;
-import org.springframework.stereotype.Service;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -19,8 +17,6 @@ import java.util.concurrent.TimeUnit;
 import static guru.nicks.validation.dsl.ValiDsl.checkNotBlank;
 import static guru.nicks.validation.dsl.ValiDsl.checkNotNull;
 
-@ConditionalOnMissingBean(RateLimitService.class)
-@Service
 @RequiredArgsConstructor
 @Slf4j
 public class RateLimitServiceImpl implements RateLimitService {

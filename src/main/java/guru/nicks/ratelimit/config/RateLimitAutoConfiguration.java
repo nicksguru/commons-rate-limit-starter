@@ -1,5 +1,8 @@
 package guru.nicks.ratelimit.config;
 
+import guru.nicks.ratelimit.impl.RateLimitServiceImpl;
+import guru.nicks.ratelimit.service.RateLimitService;
+
 import io.github.bucket4j.distributed.ExpirationAfterWriteStrategy;
 import io.github.bucket4j.distributed.jdbc.PrimaryKeyMapper;
 import io.github.bucket4j.distributed.proxy.ExpiredEntriesCleaner;
@@ -7,6 +10,7 @@ import io.github.bucket4j.distributed.proxy.ProxyManager;
 import io.github.bucket4j.postgresql.Bucket4jPostgreSQL;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -20,8 +24,15 @@ import java.time.Duration;
  */
 @Configuration(proxyBeanMethods = false)
 @RequiredArgsConstructor
-public class RateLimitConfig {
+public class RateLimitAutoConfiguration {
 
+    @ConditionalOnMissingBean(RateLimitService.class)
+    @Bean
+    public RateLimitService rateLimitService(ProxyManager<String> proxyManager) {
+        return new RateLimitServiceImpl(proxyManager);
+    }
+
+    @ConditionalOnMissingBean(ProxyManager.class)
     @Bean
     public ProxyManager<String> bucket4jProxyManager(DataSource dataSource) {
         return Bucket4jPostgreSQL.selectForUpdateBasedBuilder(dataSource)

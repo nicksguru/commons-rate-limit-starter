@@ -9,12 +9,17 @@ import io.github.bucket4j.distributed.BucketProxy;
 import io.github.bucket4j.distributed.proxy.ProxyManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import static guru.nicks.validation.dsl.ValiDsl.checkNotBlank;
+import static guru.nicks.validation.dsl.ValiDsl.checkNotNull;
+
+@ConditionalOnMissingBean(RateLimitService.class)
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -25,10 +30,12 @@ public class RateLimitServiceImpl implements RateLimitService {
 
     @Override
     public <T> void throttle(T data, RateLimit<T> rateLimit) {
-        String key = rateLimit.resolveBucketKey(data);
+        checkNotNull(rateLimit, "rate limit");
+        String key = checkNotBlank(rateLimit.resolveBucketKey(data), "bucket key");
+
         // not 'debug' because key names may contain sensitive information, such as phone numbers
         if (log.isTraceEnabled()) {
-            log.trace("Using counter key '{}' for rate limiting", key);
+            log.trace("Using bucket key '{}' for rate limiting", key);
         }
 
         BucketProxy bucket = proxyManager.builder()
@@ -37,7 +44,15 @@ public class RateLimitServiceImpl implements RateLimitService {
 
         // rate limit exceeded
         if (!consumptionProbe.isConsumed()) {
-            long secondsUntilRefill = TimeUnit.NANOSECONDS.toSeconds(consumptionProbe.getNanosToWaitForRefill());
+            long nanosUntilRefill = consumptionProbe.getNanosToWaitForRefill();
+            long secondsUntilRefill = TimeUnit.NANOSECONDS.toSeconds(nanosUntilRefill);
+
+            // ensure min. 1s in response header (0 would mean 'can retry immediately')
+            if ((nanosUntilRefill > 0) && (secondsUntilRefill == 0)) {
+                log.warn("Rate limit wait time less than 1s - rounding up to 1s for HTTP response header");
+                secondsUntilRefill = 1L;
+            }
+
             throw new RateLimitExceededException(Map.of(HttpHeaders.RETRY_AFTER, secondsUntilRefill));
         }
 

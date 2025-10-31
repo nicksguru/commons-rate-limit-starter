@@ -25,7 +25,7 @@ public class RateLimitServiceImpl implements RateLimitService {
     private final ProxyManager<String> proxyManager;
 
     @Override
-    public <T> void throttle(T data, RateLimit<T> rateLimit) {
+    public <T> void limit(T data, RateLimit<T> rateLimit) {
         checkNotNull(rateLimit, "rate limit");
         String key = checkNotBlank(rateLimit.resolveBucketKey(data), "bucket key");
 

@@ -1,6 +1,6 @@
 @security #@disabled
 Feature: Rate Limit Service
-  Rate limit service should throttle requests based on configured limits
+  Rate limit service should limit requests based on configured limits
 
   Scenario: Successful request when rate limit is not exceeded
     Given a rate limit configuration with 5 tokens

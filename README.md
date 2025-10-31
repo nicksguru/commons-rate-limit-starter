@@ -1,6 +1,6 @@
 # [Nicks.Guru](https://nicks.guru) Commons Rate Limit Starter
 
-Starter for limiting (throttling) requests to API components. Based on [Bucket4j](https://github.com/bucket4j/bucket4j)
+Starter for limiting request rate to API components. Based on [Bucket4j](https://github.com/bucket4j/bucket4j)
 and PostgreSQL. See Liquibase migration XML [here](src/main/resources/bucket4j-liquibase-migration.xml).
 
 ## Usage

@@ -5,7 +5,7 @@
     <parent>
         <groupId>guru.nicks.commons</groupId>
         <artifactId>parent</artifactId>
-        <version>1.8.0</version><!-- [BVM] -->
+        <version>1.8.1</version><!-- [BVM] -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
     <version>${guru.nicks.commons.version}</version>
 
     <name>Nicks.Guru Commons Rate Limit Starter</name>
-    <description>Starter for limiting (throttling) requests to API components</description>
+    <description>Starter for limiting request rate to API components</description>
     <url>https://github.com/nicksguru/commons-rate-limit-starter</url>
 
     <licenses>

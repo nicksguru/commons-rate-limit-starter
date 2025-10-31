@@ -84,7 +84,7 @@ public class RateLimitServiceSteps {
     @When("a request is made with key {string}")
     public void aRequestIsMadeWithKey(String key) {
         try {
-            rateLimitService.throttle(key, rateLimit);
+            rateLimitService.limit(key, rateLimit);
         } catch (Exception e) {
             textWorld.setLastException(e);
         }

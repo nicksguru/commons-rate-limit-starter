@@ -24,7 +24,7 @@ import java.time.Duration;
  */
 @Configuration(proxyBeanMethods = false)
 @RequiredArgsConstructor
-public class RateLimitAutoConfiguration {
+public class CommonsRateLimitAutoConfiguration {
 
     @ConditionalOnMissingBean(RateLimitService.class)
     @Bean

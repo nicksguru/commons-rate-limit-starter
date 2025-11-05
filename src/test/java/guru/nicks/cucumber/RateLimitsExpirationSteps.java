@@ -1,6 +1,6 @@
 package guru.nicks.cucumber;
 
-import guru.nicks.ratelimit.config.RateLimitAutoConfiguration;
+import guru.nicks.ratelimit.config.CommonsRateLimitAutoConfiguration;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -22,7 +22,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
- * Step definitions for testing {@link RateLimitAutoConfiguration}.
+ * Step definitions for testing {@link CommonsRateLimitAutoConfiguration}.
  */
 public class RateLimitsExpirationSteps {
 
@@ -34,7 +34,7 @@ public class RateLimitsExpirationSteps {
     private ArgumentCaptor<Integer> batchSizeCaptor;
     private AutoCloseable closeableMocks;
 
-    private RateLimitAutoConfiguration.ExpiresBucketCleanerCronJob cleanerCronJob;
+    private CommonsRateLimitAutoConfiguration.ExpiresBucketCleanerCronJob cleanerCronJob;
     private ProxyManager<String> proxyManager;
     private int batchSize;
 
@@ -55,7 +55,7 @@ public class RateLimitsExpirationSteps {
 
     @Given("a proxy manager with expired buckets")
     public void aProxyManagerWithExpiredBuckets() {
-        cleanerCronJob = new RateLimitAutoConfiguration.ExpiresBucketCleanerCronJob(expiredEntriesCleaner);
+        cleanerCronJob = new CommonsRateLimitAutoConfiguration.ExpiresBucketCleanerCronJob(expiredEntriesCleaner);
 
         // default behavior: return batch size to indicate full batch was processed and nothing remains to process
         when(expiredEntriesCleaner.removeExpired(batchSizeCaptor.capture()))
@@ -74,7 +74,7 @@ public class RateLimitsExpirationSteps {
 
     @When("the bucket4j proxy manager is created")
     public void theBucket4jProxyManagerIsCreated() {
-        var rateLimitConfig = new RateLimitAutoConfiguration();
+        var rateLimitConfig = new CommonsRateLimitAutoConfiguration();
         proxyManager = rateLimitConfig.bucket4jProxyManager(dataSource);
     }
 

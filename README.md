@@ -1,7 +1,7 @@
 # [Nicks.Guru](https://nicks.guru) Commons Rate Limit Starter
 
-:rocket:
 ![Latest version](https://img.shields.io/maven-central/v/guru.nicks.commons/rate-limit-starter?filter=!25.*&label=Latest%20version:&cacheSeconds=10800)
+:rocket:
 ![Release date](https://img.shields.io/maven-central/last-update/guru.nicks.commons/rate-limit-starter?label=&color=orange&cacheSeconds=10800)
 
 Starter for limiting request rate to API components. Based on [Bucket4j](https://github.com/bucket4j/bucket4j)

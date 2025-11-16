@@ -1,6 +1,6 @@
 # [Nicks.Guru](https://nicks.guru) Commons Rate Limit Starter
 
-<img alt="Latest version" src="https://img.shields.io/maven-central/v/guru.nicks.commons/rate-limit-starter?filter=!25*&label=Latest%20version:&cacheSeconds=7200"> <img alt="Release date"  src="https://img.shields.io/maven-central/last-update/guru.nicks.commons/rate-limit-starter?label=&cacheSeconds=7200">
+<img alt="Latest version" src="https://img.shields.io/maven-central/v/guru.nicks.commons/rate-limit-starter?filter=!25.*&label=Latest%20version:&cacheSeconds=7200"/> <img alt="Release date" src="https://img.shields.io/maven-central/last-update/guru.nicks.commons/rate-limit-starter?label=&color=orange&cacheSeconds=7200"/>
 
 Starter for limiting request rate to API components. Based on [Bucket4j](https://github.com/bucket4j/bucket4j)
 and PostgreSQL. See Liquibase migration XML [here](src/main/resources/bucket4j-liquibase-migration.xml).

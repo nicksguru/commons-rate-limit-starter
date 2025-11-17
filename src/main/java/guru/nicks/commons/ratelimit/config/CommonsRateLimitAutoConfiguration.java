@@ -1,7 +1,7 @@
-package guru.nicks.ratelimit.config;
+package guru.nicks.commons.ratelimit.config;
 
-import guru.nicks.ratelimit.impl.RateLimitServiceImpl;
-import guru.nicks.ratelimit.service.RateLimitService;
+import guru.nicks.commons.ratelimit.impl.RateLimitServiceImpl;
+import guru.nicks.commons.ratelimit.service.RateLimitService;
 
 import io.github.bucket4j.distributed.ExpirationAfterWriteStrategy;
 import io.github.bucket4j.distributed.jdbc.PrimaryKeyMapper;

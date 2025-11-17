@@ -1,8 +1,8 @@
-package guru.nicks.ratelimit.impl;
+package guru.nicks.commons.ratelimit.impl;
 
-import guru.nicks.exception.http.RateLimitExceededException;
-import guru.nicks.ratelimit.RateLimit;
-import guru.nicks.ratelimit.service.RateLimitService;
+import guru.nicks.commons.exception.http.RateLimitExceededException;
+import guru.nicks.commons.ratelimit.RateLimit;
+import guru.nicks.commons.ratelimit.service.RateLimitService;
 
 import io.github.bucket4j.ConsumptionProbe;
 import io.github.bucket4j.distributed.BucketProxy;
@@ -14,8 +14,8 @@ import org.springframework.http.HttpHeaders;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static guru.nicks.validation.dsl.ValiDsl.checkNotBlank;
-import static guru.nicks.validation.dsl.ValiDsl.checkNotNull;
+import static guru.nicks.commons.validation.dsl.ValiDsl.checkNotBlank;
+import static guru.nicks.commons.validation.dsl.ValiDsl.checkNotNull;
 
 @RequiredArgsConstructor
 @Slf4j

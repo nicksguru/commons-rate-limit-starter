@@ -1,7 +1,7 @@
-package guru.nicks.ratelimit.service;
+package guru.nicks.commons.ratelimit.service;
 
-import guru.nicks.exception.http.RateLimitExceededException;
-import guru.nicks.ratelimit.RateLimit;
+import guru.nicks.commons.exception.http.RateLimitExceededException;
+import guru.nicks.commons.ratelimit.RateLimit;
 
 /**
  * Performs rate limiting.

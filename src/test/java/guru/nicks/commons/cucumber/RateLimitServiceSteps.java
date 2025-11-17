@@ -1,9 +1,9 @@
-package guru.nicks.cucumber;
+package guru.nicks.commons.cucumber;
 
-import guru.nicks.cucumber.world.TextWorld;
-import guru.nicks.exception.http.RateLimitExceededException;
-import guru.nicks.ratelimit.RateLimit;
-import guru.nicks.ratelimit.impl.RateLimitServiceImpl;
+import guru.nicks.commons.cucumber.world.TextWorld;
+import guru.nicks.commons.exception.http.RateLimitExceededException;
+import guru.nicks.commons.ratelimit.RateLimit;
+import guru.nicks.commons.ratelimit.impl.RateLimitServiceImpl;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

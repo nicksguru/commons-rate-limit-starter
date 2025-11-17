@@ -1,7 +1,7 @@
-package guru.nicks.ratelimit;
+package guru.nicks.commons.ratelimit;
 
-import guru.nicks.ratelimit.service.RateLimitService;
-import guru.nicks.utils.PhoneNumberUtils;
+import guru.nicks.commons.ratelimit.service.RateLimitService;
+import guru.nicks.commons.utils.PhoneNumberUtils;
 
 import io.github.bucket4j.BucketConfiguration;
 

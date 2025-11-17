@@ -1,6 +1,6 @@
-package guru.nicks.cucumber;
+package guru.nicks.commons.cucumber;
 
-import guru.nicks.ratelimit.config.CommonsRateLimitAutoConfiguration;
+import guru.nicks.commons.ratelimit.config.CommonsRateLimitAutoConfiguration;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

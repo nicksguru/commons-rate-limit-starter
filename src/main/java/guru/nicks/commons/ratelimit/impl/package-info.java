@@ -1,4 +1,4 @@
 @NonNullApi
-package guru.nicks.ratelimit.service;
+package guru.nicks.commons.ratelimit.impl;
 
 import org.springframework.lang.NonNullApi;

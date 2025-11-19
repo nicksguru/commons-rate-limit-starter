@@ -24,17 +24,27 @@ import java.time.Duration;
  */
 @Configuration(proxyBeanMethods = false)
 @RequiredArgsConstructor
+@Slf4j
 public class CommonsRateLimitAutoConfiguration {
 
+    /**
+     * Creates {@link RateLimitService} bean if it's not already present.
+     */
     @ConditionalOnMissingBean(RateLimitService.class)
     @Bean
     public RateLimitService rateLimitService(ProxyManager<String> proxyManager) {
+        log.debug("Building {} bean", RateLimitService.class.getSimpleName());
         return new RateLimitServiceImpl(proxyManager);
     }
 
+    /**
+     * Creates {@link ProxyManager} bean if it's not already present.
+     */
     @ConditionalOnMissingBean(ProxyManager.class)
     @Bean
     public ProxyManager<String> bucket4jProxyManager(DataSource dataSource) {
+        log.debug("Building {} bean", ProxyManager.class.getSimpleName());
+
         return Bucket4jPostgreSQL.selectForUpdateBasedBuilder(dataSource)
                 .table("bucket4j")
                 // primary keys are strings, such as recipient phone numbers

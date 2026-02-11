@@ -10,6 +10,7 @@ import io.github.bucket4j.postgresql.Bucket4jPostgreSQL;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -21,7 +22,7 @@ import java.time.Duration;
  * Configures Postgres-based Bucket4J storage and cron job for deleting expired buckets. See
  * <a href="https://bucket4j.com/8.13.1/toc.html#bucket4j-postgresql">Bucket4J manual</a> for details.
  */
-@Configuration(proxyBeanMethods = false)
+@AutoConfiguration
 @RequiredArgsConstructor
 @Slf4j
 public class CommonsRateLimitAutoConfiguration {

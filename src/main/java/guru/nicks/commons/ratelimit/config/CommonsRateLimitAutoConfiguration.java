@@ -2,7 +2,6 @@ package guru.nicks.commons.ratelimit.config;
 
 import guru.nicks.commons.ratelimit.impl.RateLimitServiceImpl;
 import guru.nicks.commons.ratelimit.service.RateLimitService;
-
 import io.github.bucket4j.distributed.ExpirationAfterWriteStrategy;
 import io.github.bucket4j.distributed.jdbc.PrimaryKeyMapper;
 import io.github.bucket4j.distributed.proxy.ExpiredEntriesCleaner;

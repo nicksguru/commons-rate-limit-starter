@@ -45,7 +45,7 @@
     <dependencies>
         <dependency>
             <groupId>guru.nicks.commons</groupId>
-            <artifactId>utils</artifactId>
+            <artifactId>redis-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>guru.nicks.commons</groupId>
@@ -61,7 +61,11 @@
         </dependency>
         <dependency>
             <groupId>com.bucket4j</groupId>
-            <artifactId>bucket4j_jdk17-postgresql</artifactId>
+            <artifactId>bucket4j_jdk17-redis-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.bucket4j</groupId>
+            <artifactId>bucket4j_jdk17-redisson</artifactId>
         </dependency>
 
         <!-- @Builder, @Slf4j, etc. -->
